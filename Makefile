@@ -1,5 +1,5 @@
 install:
-	pip install .
+	pip install -e .
 
 clean:
 	rm -rf build dist docs/build kedro/html pip-wheel-metadata .mypy_cache .pytest_cache features/steps/test_plugin/test_plugin.egg-info kedro/datasets

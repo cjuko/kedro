@@ -3,7 +3,7 @@ data-driven pipelines.
 """
 
 from .modular_pipeline import pipeline
-from .node import node
+from .node import node, Transform
 from .pipeline import Pipeline
 
-__all__ = ["pipeline", "node", "Pipeline"]
+__all__ = ["pipeline", "node", "Pipeline", "Transform"]

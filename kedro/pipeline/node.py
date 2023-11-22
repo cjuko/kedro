@@ -595,6 +595,21 @@ def node(  # noqa: too-many-arguments
     )
 
 
+class Transform:
+    def __init__(self, inputs, outputs):
+        self.inputs = inputs
+        self.outputs = outputs
+
+    def __call__(self, func):
+        print(f"Transform {func.__name__}")
+        return node(
+            func=func,
+            inputs=self.inputs,
+            outputs=self.outputs,
+            name=func.__name__ + "_node",
+        )
+
+
 def _dict_inputs_to_list(func: Callable[[Any], Any], inputs: dict[str, str]):
     """Convert a dict representation of the node inputs to a list, ensuring
     the appropriate order for binding them to the node's function.
